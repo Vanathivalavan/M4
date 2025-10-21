@@ -1,60 +1,112 @@
 # EX-16-LEFT-SHIFT-OPERATION
 ## AIM
-To write a C Program to perform the basic left shift operation for 44 integer number with 3 shifts.
+Write a C program to perform the basic left and right shift operation.  
+
 
 ## ALGORITHM
-1.	Start the program.
-2.	Assign values of a and b as 44 and 3.
-3.	Use left shift operator (<<) and shift the value of a three times.
-4.	Display the result.
-5.	Stop the program.
+1. Declare an unsigned integer variable a and an integer variable c.
+
+2. Read the value of a from the user using scanf().
+
+3. Perform left shift operation:
+
+4. Shift the bits of a two positions to the left (a << 2).
+
+5. Store the result in variable c.
+
+6. Print the result.
+
+7. Perform right shift operation:
+
+8. Shift the bits of a two positions to the right (a >> 2).
+
+9. Store the result in variable c.
+
+10. Print the result.
+
 
 ## PROGRAM
+```
+#include <stdio.h>
+int main() {
+    unsigned int a ;	/* 60 = 0011 1100 */  
+    scanf("%d",&a);
+      int c = 0; 
+    c = a << 2;     /* 240 = 1111 0000 */
+   printf("After Left Shift Operation value of a is:%d\n", c );
+   c = a>>  2;     /* 15 = 0000 1111 */
+   printf("After Right Shift Operation value of a is:%d\n", c );
+}
+
+```
 
 ## OUTPUT
 
-
-
-
-
-
-
-
+![alt text](M4d1.png)
 
 ## RESULT
-Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
 
 
-
-
- 
- 
-
+Thus, the program to perform left shift and right shift operations on a given number using bitwise operators has been executed successfully.
 
 # EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
 
 
 ## AIM
 
-Write a C Program to check whether the two numbers are equal or not using simple if statement.
+Write a C program to check whether the entered year is 20th century is valid or not using nested if.
+
 
 ## ALGORITHM
 
-1.	Start the program.
-2.	Read two numbers.
-3.	If first number is equal to second number, display both are equal.
-4.	Otherwise display both are not equal.
-5.	Stop the program.
+1. Declare an integer variable year.
+
+2. Read the value of year from the user.
+
+3. Check if the year is greater than or equal to 2000 and less than or equal to 2099.
+
+4. If true, print "Year is 20th Century."
+
+5. Otherwise, print "Year is Not 20th Century."
+
 
 ## PROGRAM
+```
+#include<stdio.h> 
 
+int main() 
+{
+    int  year;
+
+
+    scanf("%d", &year);
+
+    if (year >= 2000 ) 
+    {
+
+       if(year <= 2099)
+    {
+        printf("Year is 20th Century.");
+    }
+}
+    else
+    {
+        printf("Year is Not 20th Century.");
+    }
+
+    return 0; 
+}
+```
 
 ## OUTPUT
+
+![alt text](M4d2.png)
            
 ## RESULT
 
-Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully
- 
+ Thus, the program to check whether the given year belongs to the 20th century has been executed successfully.
+
+
  
 
 
@@ -70,10 +122,30 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+int main() {
+    char str[100];
+
+ 
+    scanf("%s", str);  // read the string
+
+    // Convert each character to lowercase
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+
+    printf("Lower case String is:%s\n", str);
+
+    return 0;
+}
+```
 ## OUTPUT
 
-
+![alt text](M4d3.png)
 
 
 ## RESULT
@@ -95,12 +167,26 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int count=1;
+    char str[300];
+    scanf("%[^\n]",str);
+    int v=strlen(str);
+    for(int i=0;i<v;i++)
+    {
+        if(str[i]==' ')
+        count++;
+    }
+    printf("%d",count);
+    return 0;
+}
+```
 ## OUTPUT
 
-
-
-
+![alt text](M4d4.png)
 
 ## RESULT
 Thus the program to count the total number of words in a given string using do While loop has been executed successfully
@@ -112,27 +198,38 @@ Thus the program to count the total number of words in a given string using do W
 ## AIM
 write a Program to compare two strings without using strcmp().
 ## ALGORITHM
-Step 1: Start the program.
-Step 2: Declare two character arrays c1 and c2 of size 100 to store the strings. Also, declare an integer variable
-             flag and initialize it to 0, and i for indexing.      
-Step 3: Read the first string c1 using scanf("%[^\n]", c1); — this reads input until a newline is encountered 
-            (i.e., can include spaces).
-Step 4: Read the second string c2 using scanf("%s", c2); — this reads input until a space or newline (i.e., no 
-            spaces in the second string).
-Step 5: Start comparing characters of both strings from index i = 0.
-Step 6: Repeat the following while neither c1[i] nor c2[i] is '\0' (i.e., end of string):
-•	If c1[i] is not equal to c2[i], set flag = 1.
-•	Increment i by 1.
-Step 7: After the loop, check the value of flag:
-•	If flag == 0, print "strings are same".
-•	Otherwise, print "strings are not same".
-Step 8: End the program.
+1. Start the program.
+
+2. Declare two character arrays a and b.
+
+3. Read two strings from the user using scanf().
+
+4. Find the lengths of both strings using strlen().
+
+5. If the lengths are equal, print "strings are same", otherwise print "strings are not same"
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+int main()
+{
+    char a[100],b[100];
+    scanf("%s%s",a,b);
+    
+    int length1=strlen(a);
+    int length2=strlen(b);
+    if(length1!=length2)
+    printf("strings are not same");
+    else 
+    printf("strings are same");
+}
+```
 
 ## OUTPUT
- 
+ ![alt text](M4d5.png)
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
